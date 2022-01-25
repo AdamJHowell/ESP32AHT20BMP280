@@ -76,9 +76,7 @@ void setup()
 	snprintf( macAddress, 18, "%s", WiFi.macAddress().c_str() );
 
 	// Try to connect to the configured WiFi network, up to 10 times.
-	wifiConnect( 10 );
-	// Connect to the MQTT broker.
-	mqttConnect( 10 );
+	wifiConnect( 20 );
 } // End of setup() function.
 
 
@@ -90,7 +88,7 @@ void wifiConnect( int maxAttempts )
 	Serial.println( logString );
 
 	// Connect to the WiFi network.
-	Serial.printf( "Wi-Fi mode set to WIFI_STA %s\n", WiFi.mode( WIFI_STA ) ? "" : "Failed!" );
+	Serial.printf( "Wi-Fi mode set to WIFI_STA %s\n", WiFi.mode( WIFI_STA ) ? "" : " - Failed!" );
 	WiFi.begin( wifiSsid, wifiPassword );
 
 	int i = 0;
@@ -176,7 +174,7 @@ void loop()
 	}
 	mqttClient.loop();
 
-	// The AHT20 can respond with a reading every ~50ms. 
+	// The AHT20 can respond with a reading every ~50ms.
 	// However, increased read time can cause the IC to heat around 1.0C above ambient temperature.
 	// The datasheet recommends reading every 2 seconds.
 	if( aht20Sensor.available() == true )
