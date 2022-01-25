@@ -172,6 +172,7 @@ void loop()
 		// Reconnect to the MQTT broker.
 		mqttConnect( 10 );
 	}
+	// The loop() function facilitates the receiving of messages and maintains the connection to the broker.
 	mqttClient.loop();
 
 	// The AHT20 can respond with a reading every ~50ms.
