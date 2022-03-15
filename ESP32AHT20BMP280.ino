@@ -1,7 +1,9 @@
 /*
- * This sketch is a branc of my PubSubWeather sketch.
- * This sketch will use a AHT20/BMP280 combination sensor to show temperature, pressure, and humidity.
+ * This sketch is a branch of my PubSubWeather sketch.
+ * This sketch will use a AHT20/BMP280 combination sensor to show temperature, pressure, estimated altitude, and humidity.
  * The ESP-32 SDA pin is GPIO21, and SCL is GPIO22.
+ * @copyright   Copyright © 2022 Adam Howell
+ * @licence     The MIT License (MIT)
  */
 #include "WiFi.h"						// This header is part of the standard library.  https://www.arduino.cc/en/Reference/WiFi
 #include <Wire.h>						// This header is part of the standard library.  https://www.arduino.cc/en/reference/wire
@@ -19,7 +21,7 @@
 //const char* wifiPassword = "yourPassword";		// Typically kept in "privateInfo.h".
 //const char* mqttBroker = "yourBrokerAddress";	// Typically kept in "privateInfo.h".
 //const int mqttPort = 1883;							// Typically kept in "privateInfo.h".
-const char* mqttTopic = "ajhWeather";
+const char* mqttTopic = "espWeather";
 const String sketchName = "ESP32AHT20BMP280.ino";
 char ipAddress[16];
 char macAddress[18];
@@ -44,6 +46,7 @@ void setup()
 	delay( 10 );
 	Serial.println( '\n' );
 	Serial.println( sketchName + " is beginning its setup()." );
+	Serial.println( __FILE__ );
 	Wire.begin();	// Join I2C bus.
 
 	// Set the ipAddress char array to a default value.
