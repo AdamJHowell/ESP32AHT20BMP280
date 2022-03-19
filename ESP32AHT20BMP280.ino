@@ -43,7 +43,8 @@ void setup()
 {
 	// Start the Serial communication to send messages to the computer.
 	Serial.begin( 115200 );
-	delay( 10 );
+	if( !Serial )
+		delay( 1000 );
 	Serial.println( '\n' );
 	Serial.println( sketchName + " is beginning its setup()." );
 	Serial.println( __FILE__ );
