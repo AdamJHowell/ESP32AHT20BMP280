@@ -20,7 +20,7 @@ IndentCaseLabels:								true
 MaxEmptyLinesToKeep:							2
 PointerBindsToType:							true
 ReflowComments:								false
-SortIncludes:									true
+SortIncludes:									false
 
 SpaceAfterCStyleCast:				false
 SpacesInCStyleCastParentheses:	true
