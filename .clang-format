@@ -18,7 +18,7 @@ BreakBeforeBraces:							Allman
 ColumnLimit:									0
 IndentCaseLabels:								true
 MaxEmptyLinesToKeep:							2
-PointerBindsToType:							true
+PointerBindsToType:							false
 ReflowComments:								false
 SortIncludes:									false
 
