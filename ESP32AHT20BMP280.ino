@@ -5,11 +5,11 @@
  * @copyright   Copyright © 2022 Adam Howell
  * @licence     The MIT License (MIT)
  */
-#include "WiFi.h"						// This header is part of the standard library.  https://www.arduino.cc/en/Reference/WiFi
+#include <WiFi.h>						// This header is part of the standard library.  https://www.arduino.cc/en/Reference/WiFi
 #include <Wire.h>						// This header is part of the standard library.  https://www.arduino.cc/en/reference/wire
 #include <PubSubClient.h>			// PubSub is the MQTT API.  Author: Nick O'Leary  https://github.com/knolleary/pubsubclient
 #include <SparkFun_Qwiic_Humidity_AHT20.h>	// Library used to interface with the AHT20.  Author: SparkFun  https://github.com/sparkfun/SparkFun_Qwiic_Humidity_AHT20_Arduino_Library
-#include "Seeed_BMP280.h"							// https://github.com/Seeed-Studio/Grove_BMP280
+#include <Seeed_BMP280.h>							// https://github.com/Seeed-Studio/Grove_BMP280
 #include "privateInfo.h"			// I use this file to hide my network information from random people browsing my GitHub repo.
 
 /**
@@ -31,7 +31,7 @@ int pirPin = 8;											// The GPIO that the PIR "out" pin is connected to.
 
 // Create class objects.
 WiFiClient espClient;							// Network client.
-PubSubClient mqttClient( espClient );		// MQTT client.
+PubSubClient mqttClient( espClient );		// MQTT client.c:\Users\adam.howell\Documents\GitHub\ESP32AHT20BMP280\LICENSE
 AHT20 aht20Sensor;
 BMP280 bmp280Sensor;
 
